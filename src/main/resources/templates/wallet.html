@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <script th:src="@{/js/delete-wallet.js}"></script>
+</head>
+<body>
+<h1>User List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Account Number</th>
+        <th>Balance</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="wallet : ${wallets}">
+        <td  th:text="${wallet.id}"></td>
+        <td th:text="${wallet.accountNum}"></td>
+        <td th:text="${wallet.balance}"></td>
+        <td><button th:onclick="'deleteWallet(\'' + ${wallet.id} + '\')'">Delete</button> <button>Update</button></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+

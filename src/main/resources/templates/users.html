@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <script th:src="@{/js/delete.js}"></script>
+</head>
+<body>
+<h1>User List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Birth Date</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.gender} ? 'Male' : 'Female'"></td>
+        <td th:text="${user.birthDate}"></td>
+        <td><button th:onclick="'deleteUser(\'' + ${user.id} + '\');'">Delete</button><button th:onclick="">Update</button></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

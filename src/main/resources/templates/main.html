@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/save.js}"></script>
+
+</head>
+<body>
+<form th:action="@{/users/save}" method="post" th:object="${user}">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}">
+    </div>
+    <div>
+        <label >Gender:</label>
+        <input type="radio" id="male" th:field="*{gender}" th:value="true"/>
+        <label for="male">Male</label>
+        <input type="radio" id="female" th:field="*{gender}" th:value="false"/>
+        <label for="female">Female</label>
+    </div>
+    <div>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" th:field="*{birthDate}">
+    </div>
+    <button type="submit">Save</button>
+</form>
+
+    <!--<div class="fo4">
+        <form action="" th:object="${person}">
+            <table >
+                <tr>
+                    <td><label for="form1" id="a" > NAME:</label></td>
+                    <td><input type="text" id="form1" class="b" th:text="*{name}"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="form3" id="a"> DATE OF BIRTH:</label></td>
+                    <td><input type="date" id="form3" class="b" ></td>
+                </tr>
+
+                <tr>
+                    <td><label for="form11" id="a" style="color: white;"> ADDRESS:</label></td>
+                    <td><input type="text" id="form11" maxlength="27" class="b" th:value="*{address}"></td>
+                </tr>
+                <tr>
+                    <td id="a"> GENDER:</td>
+                    <td><input name="gender" type="radio" id="form5" class="b"> 
+                        <label for="form5" >MALE</label>
+                        <input name="gender" type="radio" id="form13" class="b"> 
+                        <label for="form13" sel >FEMALE</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="form6" id="a"> EMAIL:</label></td>
+                    <td><input type="text" id="form6" class="b"></td>
+                </tr>
+                <tr>
+                    <td><label for="form7" id="a"> PHONE:</label></td>
+                    <td><input type="text" id="form7" class="b"></td>
+                </tr>
+                <tr>
+                    <td><label for="form9" id="a"> QUALIFICATION:</label></td>
+                    <td><input type="text" id="form9" class="b"></td>
+                </tr>
+                
+            </table>
+            <table>
+                <td><label for="form10" id="a"> EXPERIENCE:</label></td>
+                <td><input type="text" th:value="*{experience}" id="form10"  class="b" style="width: 40px;"></td>
+                <td>YEARS</td>
+            </table>
+        </form>
+        <tr>
+            <td></td>
+        </tr>
+    </div>-->
+</body>
+</html>
