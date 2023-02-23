@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" th:href="@{/css/otp-style.css}">
+    <script th:src="@{/js/check-otp.js}"></script>
+</head>
+<body>
+<div id="otp-form">
+    <label for="otp">Enter OTP:</label>
+    <input type="text" id="otp" name="otp" minlength="6" maxlength="6" required>
+    <button type="button" th:onclick="verifyOTP()">Verify</button>
+    <div id="otp-message"></div>
+</div>
+
+</body>
+</html>

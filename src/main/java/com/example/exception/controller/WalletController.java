@@ -33,6 +33,7 @@ public class WalletController {
             return ResponseEntity.ok(new DataResponse(HttpStatus.NOT_FOUND,"Not found id: "+id));
         }
         walletRepository.delete(wallet);
+
         return ResponseEntity.ok(new DataResponse(HttpStatus.OK, "Delete successfully "));
     }
 }
